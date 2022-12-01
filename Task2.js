@@ -53,21 +53,17 @@ const toCsvText = (array) => {
 //     require is forbidden
 
 const ipFinder = (str) =>{
-    const arr = str.split(",")
-    let ascci = 0;
-    console.log(arr);
-    for (let i =0;i<str.length;i++){
-        ascci += str.charCodeAt(i).toString();
-    }
-    console.log(ascci);
-    let array = ascci.split("");
-    console.log(array);
+
+    let sum = 0;
+    for (const item of str) {
+      sum += item.charCodeAt();
+    };
+        return[sum%256,sum*2%256,sum*3%256,sum*4%256]
 }
 
-ipFinder("www.eltiempo.co")
-
-// Work In Progress
-
+console.log(ipFinder("www.google.com"));
+console.log(ipFinder("www.codewars.com"));
+console.log(ipFinder("www.starwiki.com"));
 
 //3 .Pascal's Triangle #2
 
